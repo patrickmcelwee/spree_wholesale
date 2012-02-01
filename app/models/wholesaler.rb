@@ -6,7 +6,7 @@ class Wholesaler < ActiveRecord::Base
   belongs_to :bill_address, :foreign_key => "billing_address_id", :class_name => "Address", :dependent => :destroy
   belongs_to :ship_address, :foreign_key => "shipping_address_id", :class_name => "Address", :dependent => :destroy
   
-  validates :company, :buyer_contact, :manager_contact, :phone, :taxid, :presence => true
+  validates :company, :buyer_contact, :phone, :presence => true
   validate :validate_parts
     
   delegate_belongs_to :user, :roles
