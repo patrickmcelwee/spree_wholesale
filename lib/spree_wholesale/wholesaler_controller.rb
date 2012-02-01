@@ -23,8 +23,7 @@ module SpreeWholesale
       
       def after_wholesaler_create
         flash[:notice] = I18n.t('wholesaler.signup_success')
-        WholesaleMailer.new_wholesaler_email().deliver
-	redirect_to wholesalers_path
+        redirect_to wholesalers_path
       end
       
       def after_wholesaler_failed_create
@@ -54,6 +53,7 @@ module SpreeWholesale
       
       def create
         if attach_wholesaler_parts && @wholesaler.save
+	  WholesaleMailer.new_wholesaler_email(@wholesaler).deliver
           after_wholesaler_create
         else
           after_wholesaler_failed_create
