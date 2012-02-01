@@ -38,7 +38,7 @@ class Wholesaler < ActiveRecord::Base
   end
   
   def self.term_options
-    %(Net 30, Credit Card).split(", ")
+    %(Credit Card, Net 30).split(", ")
   end
   
   private
