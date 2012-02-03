@@ -23,7 +23,7 @@ class Wholesaler < ActiveRecord::Base
     get_wholesale_role
     return false if user.roles.include?(@role)
     user.roles << @role
-    WholesaleMailer.approve_wholesaler_email(@wholesaler).deliver
+    WholesaleMailer.approve_wholesaler_email(self).deliver
     user.save
   end
   
