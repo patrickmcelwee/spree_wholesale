@@ -63,7 +63,9 @@ module SpreeWholesale
       def update
         @bill_address.update_attributes(params[:bill_address])
         if use_billing?
-          @wholesaler.ship_address.destroy unless @wholesaler.ship_address.nil? || @bill_address != @wholesaler.ship_address
+#	This line caused major problems by deleting an address entry, EVEN when it was the only
+#	address for the wholesaler (ie, when billing already equalled shipping address)
+#          @wholesaler.ship_address.destroy unless @wholesaler.ship_address.nil? || @bill_address != @wholesaler.ship_address
           @ship_address = @bill_address
         else
           @ship_address = @wholesaler.build_ship_address if @ship_address.nil? || @bill_address == @wholesaler.ship_address
