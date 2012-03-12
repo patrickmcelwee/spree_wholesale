@@ -10,3 +10,4 @@ test/dummy_hooks/after_migrate.rb
 test/dummy
 tmp/**/*
 *.swp
+.rvmrc
