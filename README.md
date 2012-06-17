@@ -10,8 +10,14 @@ Installation
 If you're on Spree 0.50.0 and above, you'll have to install Spree Wholesale from the source since I haven't released it yet. Just add this to your Gemfile:
 
 ```ruby
-# spree 1.0.x
+# spree 1.2.x
 gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => 'master'
+
+# spree 1.1.x
+gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '1.1.x'
+
+# spree 1.0.x
+gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '1.0.x'
 
 # spree 0.70.x
 gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '0.70.x'
@@ -21,14 +27,14 @@ gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branc
 
 # spree 0.50.x
 gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '0.50.x'
-```    
+```
 
 
 Otherwise just use the last stable release:
-   
-```ruby 
+
+```ruby
 gem 'spree_wholesale', '0.40.2.2'
-```    
+```
 
 
 Then install the necessary migrations, db:migrate, and create the wholesale role:
@@ -41,9 +47,9 @@ rake db:migrate spree_wholesale:create_role
 # legacy spree
 rake spree_wholesale:install
 rake db:migrate spree_wholesale:create_role
-```      
+```
 
-      
+
 If you'd like to generate sample wholesale prices based on a 66% discount:
 
 ```bash
@@ -57,7 +63,7 @@ Testing
 
 If you'd like to run tests:
 
-```bash    
+```bash
 git clone git://github.com/citrus/spree_wholesale.git
 cd spree_wholesale
 bundle install
@@ -80,15 +86,15 @@ bundle install
 bundle exec dummier
 cd test/dummy
 rails s
-```  
-  
+```
+
 
 ------------------------------------------------------------------------------
 To Do
 ------------------------------------------------------------------------------
 
 * Write more/better tests
-* Finish i18n implementation 
+* Finish i18n implementation
 
 
 ------------------------------------------------------------------------------
@@ -106,6 +112,7 @@ Contributors
 * Spencer Steffen ([@citrus](https://github.com/citrus))
 * John Hwang      ([@tavon](https://github.com/tavon))
 * Cameron Carroll ([@sanarothe](https://github.com/sanarothe))
+* Les Cochrane    ([@oldtinroof](https://github.com/oldtinroof))
 
 
 ------------------------------------------------------------------------------
