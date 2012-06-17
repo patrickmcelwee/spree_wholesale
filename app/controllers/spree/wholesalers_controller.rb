@@ -21,6 +21,7 @@ class Spree::WholesalersController < Spree::BaseController
     @wholesaler = Spree::Wholesaler.new(params[:wholesaler])
     if @wholesaler.save
       flash[:notice] = I18n.t('spree.wholesaler.signup_success')
+      WholesaleMailer.new_wholesaler_email(@wholesaler).deliver
       redirect_to spree.wholesalers_path
     else
       flash[:error] = I18n.t('spree.wholesaler.signup_failed')
