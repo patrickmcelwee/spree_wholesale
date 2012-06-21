@@ -1,6 +1,6 @@
 (function($){
   $(document).ready(function(){
-    if($('.wholesaler-form, .new_wholesaler').is('*')){
+    if($('.wholesaler-form, .new_spree_wholesaler').is('*')){
 
       // $('.wholesaler-form, .new_wholesaler').validate();
 
