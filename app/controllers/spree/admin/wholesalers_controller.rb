@@ -68,7 +68,7 @@ class Spree::Admin::WholesalersController < Spree::Admin::ResourceController
 
   def approval_setup
     @wholesaler = Spree::Wholesaler.find(params[:id])
-    @role = Role.find_or_create_by_name("wholesaler")
+    @role = Spree::Role.find_or_create_by_name("wholesaler")
   end
 
   def collection
