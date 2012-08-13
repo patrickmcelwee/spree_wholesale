@@ -11,4 +11,12 @@ Spree::Product.class_eval do
     0.01 < master.wholesale_price
   end
 
+  def self.wholesaleable
+    wholesale_products = []
+    all.each do |p|
+      wholesale_products << p if p.is_wholesaleable?
+    end
+    wholesale_products
+  end
+
 end
