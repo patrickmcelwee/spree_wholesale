@@ -1,6 +1,8 @@
 class Spree::WholesalersController < Spree::BaseController
   respond_to :html, :xml
 
+  ssl_required :new, :create
+
   def index
   end
 
@@ -23,8 +25,8 @@ class Spree::WholesalersController < Spree::BaseController
 
       # Check whether wholesaler should be auto-approved
       if Spree::Config.auto_approve_wholesaler && @wholesaler.activate!
-        flash[:notice] = "Wholesale account approved for #{@wholesaler.company}. You may now place an order."
-        redirect_to spree.products_path
+        flash[:notice] = "Wholesale account approved for #{@wholesaler.company}. You may now sign in to place an order."
+        redirect_to spree.login_path
         return
       end
 
