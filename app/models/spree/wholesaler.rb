@@ -42,6 +42,8 @@ class Spree::Wholesaler < ActiveRecord::Base
 
   def self.term_options
     %(Credit Card, Net 30).split(", ")
+    ["Credit Card", "Net 30"]
+    ["Credit Card"] if Spree::Config.auto_approve_wholesaler
   end
 
   private

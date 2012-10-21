@@ -20,6 +20,14 @@ class Spree::WholesalersController < Spree::BaseController
   def create
     @wholesaler = Spree::Wholesaler.new(params[:wholesaler])
     if @wholesaler.save
+
+      # Check whether wholesaler should be auto-approved
+      if Spree::Config.auto_approve_wholesaler && @wholesaler.activate!
+        flash[:notice] = "Wholesale account approved for #{@wholesaler.company}. You may now place an order."
+        redirect_to spree.products_path
+        return
+      end
+
       flash[:notice] = I18n.t('spree.wholesaler.signup_success')
       WholesaleMailer.new_wholesaler_email(@wholesaler).deliver
       redirect_to spree.wholesalers_path
@@ -51,4 +59,5 @@ class Spree::WholesalersController < Spree::BaseController
     flash[:notice] = I18n.t('spree.wholesaler.destroy_success')
     respond_with(@wholesaler)
   end
+
 end
