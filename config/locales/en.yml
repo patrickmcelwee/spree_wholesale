@@ -39,6 +39,9 @@ en:
 
     admin:
 
+      manage_wholesale_configurations: "Manage Wholesale Configurations"
+      wholesale_configurations: "Wholesale Configurations"
+
       hooks:
         product_form_right:
           master_wholesale_price: "Master Wholesale Price"
@@ -48,7 +51,6 @@ en:
       variants:
         form:
           wholesale_price: "Wholesale Price"
-
 
       wholesaler:
         success: Wholesale account was successfully created

@@ -1,0 +1,15 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1><%= t(:wholesale_configurations) %></h1>
+
+<table data-hook="preferences">
+  <% @preferences.each do |key| %>
+  <tr>
+    <th scope="row"><%= t(key) %>:</th>
+    <td><%= Spree::Config[key] %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p><%= link_to_with_icon 'edit', t(:edit), edit_admin_wholesale_configurations_path, :id => 'admin_wholesale_configurations_link' %></p>
+

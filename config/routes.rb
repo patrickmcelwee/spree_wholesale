@@ -13,6 +13,7 @@ Spree::Core::Engine.routes.draw do
       end
     end
 
+    resource :wholesale_configurations
   end
 
 end
