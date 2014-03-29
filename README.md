@@ -1,6 +1,5 @@
-# Spree Wholesale [![Build Status](https://secure.travis-ci.org/citrus/spree_wholesale.png)](http://travis-ci.org/citrus/spree_wholesale)
 
-Spree wholesale is a simple wholesale solution for Spree Commerce. Spree wholesale adds a wholesaler login and signup page as well as an admin to approve and deny applicants.
+Spree wholesale is a simple wholesale solution for Spree Commerce. Spree wholesale adds a wholesaler login and signup page as well as an admin to approve and deny applicants. This is a fork from citrus's fantastic original.
 
 
 ------------------------------------------------------------------------------
@@ -11,31 +10,10 @@ If you're on Spree 0.50.0 and above, you'll have to install Spree Wholesale from
 
 ```ruby
 # spree 1.2.x
-gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => 'master'
+gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => 'master'
 
 # spree 1.1.x
-gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '1.1.x'
-
-# spree 1.0.x
-gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '1.0.x'
-
-# spree 0.70.x
-gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '0.70.x'
-
-# spree 0.60.x
-gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '0.60.x'
-
-# spree 0.50.x
-gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '0.50.x'
-```
-
-
-Otherwise just use the last stable release:
-
-```ruby
-gem 'spree_wholesale', '0.40.2.2'
-```
-
+gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => '1.1.x'
 
 Then install the necessary migrations, db:migrate, and create the wholesale role:
 
@@ -43,11 +21,6 @@ Then install the necessary migrations, db:migrate, and create the wholesale role
 # spree 0.50.x and above
 rails g spree_wholesale:install
 rake db:migrate spree_wholesale:create_role
-
-# legacy spree
-rake spree_wholesale:install
-rake db:migrate spree_wholesale:create_role
-```
 
 
 If you'd like to generate sample wholesale prices based on a 66% discount:
@@ -64,7 +37,7 @@ Testing
 If you'd like to run tests:
 
 ```bash
-git clone git://github.com/citrus/spree_wholesale.git
+git clone git://github.com/patrickmcelwee/spree_wholesale.git
 cd spree_wholesale
 bundle install
 bundle exec dummier
@@ -79,7 +52,7 @@ Demo
 If you'd like a demo of spree_wholesale:
 
 ```bash
-git clone git://github.com/citrus/spree_wholesale.git
+git clone git://github.com/patrickmcelwee/spree_wholesale.git
 cd spree_wholesale
 cp test/dummy_hooks/after_migrate.rb.sample test/dummy_hooks/after_migrate.rb
 bundle install
@@ -95,6 +68,7 @@ To Do
 
 * Write more/better tests
 * Finish i18n implementation
+* Fork this README more
 
 
 ------------------------------------------------------------------------------

@@ -1,3 +1,3 @@
 module SpreeWholesale
-  VERSION = "0.70.3"
+  VERSION = "1.2.0"
 end
