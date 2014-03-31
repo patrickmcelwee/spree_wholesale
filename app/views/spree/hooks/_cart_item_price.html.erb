@@ -1,1 +1,1 @@
-<%= format_price(line_item.price) %>
+<%= Spree::Money.new(line_item.price) %>

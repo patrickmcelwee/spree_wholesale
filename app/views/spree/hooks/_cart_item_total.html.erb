@@ -1,1 +1,1 @@
-<%= format_price(line_item.price * line_item.quantity) unless line_item.quantity.nil? %>
+<%= Spree::Money.new(line_item.price * line_item.quantity) unless line_item.quantity.nil? %>

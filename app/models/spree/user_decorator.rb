@@ -2,7 +2,7 @@ Spree::User.instance_eval do
 
   has_one :wholesaler, :class_name => "Spree::Wholesaler"
 
-  scope :wholesale, lambda { includes(:roles).where("spree_roles.name" => "wholesaler") }
+  scope :wholesale, lambda { includes(:spree_roles).where("spree_roles.name" => "wholesaler") }
 
 
 end
@@ -10,7 +10,7 @@ end
 Spree::User.class_eval do
 
   def wholesaler?
-    has_role?("wholesaler") && !wholesaler.nil?
+    has_spree_role?("wholesaler") && !wholesaler.nil?
   end
 
 end

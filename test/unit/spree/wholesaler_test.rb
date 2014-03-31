@@ -42,7 +42,7 @@ class Spree::WholesalerTest < ActiveSupport::TestCase
     end
 
     should "activate" do
-      @wholesaler.roles = [Spree::Role.find_by_name("user")]
+      @wholesaler.spree_roles = [Spree::Role.find_by_name("user")]
 
       assert !@wholesaler.active?
       @wholesaler.activate!
@@ -50,7 +50,7 @@ class Spree::WholesalerTest < ActiveSupport::TestCase
     end
 
     should "deactivate" do
-      @wholesaler.roles = [Spree::Role.find_by_name("wholesaler")]
+      @wholesaler.spree_roles = [Spree::Role.find_by_name("wholesaler")]
 
       assert @wholesaler.active?
       @wholesaler.deactivate!

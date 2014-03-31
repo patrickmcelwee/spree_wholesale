@@ -18,26 +18,26 @@ class Spree::Wholesaler < ActiveRecord::Base
   before_validation :clone_billing_address, :if => "@use_billing"  
   validates :company, :buyer_contact, :phone, :presence => true
   
-  delegate_belongs_to :user, :roles
+  delegate_belongs_to :user, :spree_roles
   delegate_belongs_to :user, :email
 
   def activate!
     get_wholesale_role
-    return false if user.roles.include?(@role)
-    user.roles << @role
+    return false if user.spree_roles.include?(@role)
+    user.spree_roles << @role
     WholesaleMailer.approve_wholesaler_email(self).deliver
     user.save
   end
 
   def deactivate!
     get_wholesale_role
-    return false unless user.roles.include?(@role)
-    user.roles.delete(@role)
+    return false unless user.spree_roles.include?(@role)
+    user.spree_roles.delete(@role)
     user.save
   end
 
   def active?
-    user && user.has_role?("wholesaler")
+    user && user.has_spree_role?("wholesaler")
   end
 
   def self.term_options

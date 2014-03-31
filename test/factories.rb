@@ -47,15 +47,15 @@ FactoryGirl.define do
     email { random_email }
     password "spree123"
     password_confirmation "spree123"
-    roles { [Spree::Role.find_or_create_by_name("user")] }
+    spree_roles { [Spree::Role.find_or_create_by_name("user")] }
   end
 
   factory :admin_user, :parent => :user do
-    roles { [Spree::Role.find_or_create_by_name("admin")] }
+    spree_roles { [Spree::Role.find_or_create_by_name("admin")] }
   end
 
   factory :wholesale_user, :parent => :user do
-    roles { [Spree::Role.find_or_create_by_name("wholesaler")] }
+    spree_roles { [Spree::Role.find_or_create_by_name("wholesaler")] }
     #wholesaler { Factory.create(:wholesaler) }
   end
 

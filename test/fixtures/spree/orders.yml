@@ -8,7 +8,6 @@ incomplete:
   updated_at: 2011-01-12 03:07:39
   state: cart
   adjustment_total: 0.00
-  credit_total: 0.00
   completed_at: NULL
   bill_address_id: NULL
   ship_address_id: NULL
@@ -30,7 +29,6 @@ complete:
   updated_at: 2011-01-12 03:07:39
   state: cart
   adjustment_total: 0.00
-  credit_total: 0.00
   completed_at: NULL
   bill_address_id: NULL
   ship_address_id: NULL
@@ -52,7 +50,6 @@ wholesale:
   updated_at: 2011-01-12 03:07:39
   state: complete
   adjustment_total: 0.00
-  credit_total: 0.00
   completed_at: 2011-01-12 03:10:48
   bill_address_id: NULL
   ship_address_id: NULL

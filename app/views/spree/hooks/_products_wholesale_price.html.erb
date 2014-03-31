@@ -1,4 +1,4 @@
-<% if current_user && current_user.has_role?(:wholesaler) %>
+<% if spree_current_user && spree_current_user.has_spree_role?(:wholesaler) %>
   <% if product.is_wholesaleable? %>
     <div class="price wholesale"><%= number_to_currency(product.wholesale_price) %></div>
   <% end %>

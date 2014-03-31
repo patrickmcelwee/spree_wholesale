@@ -41,7 +41,7 @@ module FixturesHelper
     set_fixture_class :countries   => Spree::Country
     set_fixture_class :orders      => Spree::Order
     set_fixture_class :products    => Spree::Product
-    set_fixture_class :roles       => Spree::Role
+    set_fixture_class :spree_roles       => Spree::Role
     set_fixture_class :states      => Spree::State
     set_fixture_class :variants    => Spree::Variant
     set_fixture_class :wholesalers => Spree::Wholesaler

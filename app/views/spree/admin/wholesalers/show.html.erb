@@ -52,8 +52,8 @@
       <br/>
       Email: <%= @wholesaler.user.email %>
       <br/>
-      <%= link_to "view user", admin_user_path(@wholesaler.user) %> /
-      <%= link_to "edit user", edit_admin_user_path(@wholesaler.user) %> /
+      <%= link_to "view user", admin_spree_user_path(@wholesaler.user) %> /
+      <%= link_to "edit user", edit_admin_spree_user_path(@wholesaler.user) %> /
       <%= render "user_options", :user => @wholesaler.user %>
     </p>
   </div>
