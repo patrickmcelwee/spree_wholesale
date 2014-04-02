@@ -42,7 +42,7 @@ class Spree::WholesalersTest < ActiveSupport::IntegrationCase
     click_button I18n.t('wholesale_apply')
 
     assert page.has_content?(I18n.t('spree.wholesaler.signup_failed'))
-    assert page.has_content?('21 errors prohibited this record from being saved:')
+    assert page.has_content?('19 errors prohibited this record from being saved:')
   end
 
   should "be a valid wholesaler but invalid parts" do
