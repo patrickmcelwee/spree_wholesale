@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('spree_sample', '~> 1.2.0')
   s.add_development_dependency('shoulda',      '~> 3.0.0')
-  s.add_development_dependency('dummier',      '~> 0.3.2')
   s.add_development_dependency('factory_girl', '~> 2.6.0')
   s.add_development_dependency('capybara',     '~> 1.1.2')
   s.add_development_dependency('sqlite3',      '~> 1.3.4')
