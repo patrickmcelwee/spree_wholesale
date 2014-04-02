@@ -13,14 +13,6 @@ class ActiveSupport::IntegrationCase < ActiveSupport::TestCase
 
   self.use_transactional_fixtures = false
 
-  # Checks for missing translations after each test
-  teardown do
-    unless source.blank?
-      matches = source.match(/translation[\s-]+missing[^"<]*/) || []
-      assert_equal 0, matches.length, "** #{matches[0]}"
-    end
-  end
-
   # By defining this we don't need to depend on spree, just spree_core since the
   # included url helper lives in the spree root
   def spree

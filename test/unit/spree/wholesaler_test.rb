@@ -12,9 +12,7 @@ class Spree::WholesalerTest < ActiveSupport::TestCase
 
   should validate_presence_of(:company)
   should validate_presence_of(:buyer_contact)
-  should validate_presence_of(:manager_contact)
   should validate_presence_of(:phone)
-  should validate_presence_of(:taxid)
 
   context "with a new wholesaler" do
 
