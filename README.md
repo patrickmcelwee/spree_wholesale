@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/patrickmcelwee/spree_wholesale.svg?branch=master)](https://travis-ci.org/patrickmcelwee/spree_wholesale)
 
 Spree wholesale is a simple wholesale solution for Spree Commerce. Spree wholesale adds a wholesaler login and signup page as well as an admin to approve and deny applicants. This is a fork from citrus's fantastic original.
 
