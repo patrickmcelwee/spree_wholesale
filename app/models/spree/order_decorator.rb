@@ -34,6 +34,15 @@ Spree::Order.class_eval do
     save
   end
 
+  def payment_required?
+    update_totals
+    total.to_f > 0.0 && !wholesale_with_net_terms?
+  end
+
+  def wholesale_with_net_terms?
+    is_wholesale? && wholesaler.terms != 'Credit Card'
+  end
+
   def add_variant(variant, quantity = 1)
     current_item = find_line_item_by_variant(variant)
     if current_item

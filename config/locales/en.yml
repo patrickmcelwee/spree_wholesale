@@ -26,7 +26,7 @@ en:
     address_form:
       use_for_shipping: "Use billing address for shipping"
 
-  wholesale_customer: "Wholesale Customer ID: #%{id}"
+  wholesale_customer: "Wholesale Customer ID: %{id}"
 
   spree:
 
