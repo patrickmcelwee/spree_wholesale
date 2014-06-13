@@ -6,9 +6,9 @@ Gem::Specification.new do |s|
   s.name        = "spree_wholesale"
   s.version     = SpreeWholesale::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Spencer Steffen"]
-  s.email       = ["spencer@citrusme.com"]
-  s.homepage    = "https://github.com/citrus/spree_wholesale"
+  s.authors     = ["Patrick McElwee, Spencer Steffen"]
+  s.email       = ["patrick@sewliberated.com"]
+  s.homepage    = "https://github.com/patrickmcelwee/spree_wholesale"
   s.summary     = %q{Wholesale accounts for Spree Commerce.}
   s.description = %q{Spree Wholesale adds a wholesale_price field to variants and allows users with a "wholesaler" role to access these prices.}
 
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('spree_core', '~> 1.3.0')
-  s.add_dependency('spree_auth_devise', '~> 1.0')
+  s.add_dependency('spree_auth_devise', '~> 1.3.0')
 
   s.add_development_dependency('spree_sample', '~> 1.3.0')
   s.add_development_dependency('shoulda',      '~> 3.0.0')
