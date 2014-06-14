@@ -10,3 +10,4 @@ pkg/*.gem
 tmp/**/*
 *.swp
 .rvmrc
+test/dummy

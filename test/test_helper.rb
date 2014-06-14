@@ -5,7 +5,7 @@ env = File.expand_path("../dummy/config/environment.rb",  __FILE__)
 if File.exists?(env)
   require env
 else
-  raise LoadError, "Please create the dummy app before running tests. Try running `bundle exec dummier`"
+  raise LoadError, "Please create the dummy app before running tests. Try running `bundle exec rake test_app`"
 end
 
 require 'rails/test_help'

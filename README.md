@@ -7,7 +7,6 @@ Spree wholesale is a simple wholesale solution for Spree Commerce. Spree wholesa
 Installation
 ------------------------------------------------------------------------------
 
-If you're on Spree 0.50.0 and above, you'll have to install Spree Wholesale from the source since I haven't released it yet. Just add this to your Gemfile:
 
 ```ruby
 # spree 1.2.x
@@ -55,9 +54,8 @@ If you'd like a demo of spree_wholesale:
 ```bash
 git clone git://github.com/patrickmcelwee/spree_wholesale.git
 cd spree_wholesale
-cp test/dummy_hooks/after_migrate.rb.sample test/dummy_hooks/after_migrate.rb
 bundle install
-bundle exec dummier
+bundle exec rake test_app
 cd test/dummy
 rails s
 ```
@@ -84,6 +82,7 @@ Known Issues
 Contributors
 ------------------------------------------------------------------------------
 
+* Patrick McElwee ([@patrickmcelwee](https://github.com/patrickmcelwee)])
 * Spencer Steffen ([@citrus](https://github.com/citrus))
 * John Hwang      ([@tavon](https://github.com/tavon))
 * Cameron Carroll ([@sanarothe](https://github.com/sanarothe))

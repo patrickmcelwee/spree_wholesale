@@ -9,6 +9,7 @@ end
 require 'rake'
 require 'rake/testtask'
 #require 'rake/rdoctask'
+require 'spree/core/testing_support/common_rake'
 
 Bundler::GemHelper.install_tasks
 
@@ -17,6 +18,12 @@ Rake::TestTask.new(:test) do |t|
   t.libs << 'test'
   t.pattern = 'test/**/*_test.rb'
   t.verbose = false
+end
+
+desc 'Generates a dummy app for testing'
+task :test_app do
+    ENV['LIB_NAME'] = 'spree/auth'
+      Rake::Task['common:test_app'].invoke("Spree::User")
 end
 
 task :default => :test
