@@ -27,9 +27,7 @@ Spree::Order.class_eval do
   end
 
   def to_wholesale!
-    puts "called to_wholesale!"
     return false unless user.wholesaler.present?
-    puts "got past early return"
     self.wholesale = true
     set_line_item_prices(:wholesale_price)
     update!
@@ -38,11 +36,7 @@ Spree::Order.class_eval do
 
   def payment_required?
     update_totals
-    total.to_f > 0.0 && !wholesale_with_net_terms?
-  end
-
-  def wholesale_with_net_terms?
-    is_wholesale? && wholesaler.terms != 'Credit Card'
+    total.to_f > 0.0 && !_wholesale_with_net_terms?
   end
 
   def add_variant(variant, quantity = 1, currency = nil)
@@ -65,6 +59,12 @@ Spree::Order.class_eval do
 
     self.reload
     current_item
+  end
+
+  private
+
+  def _wholesale_with_net_terms?
+    is_wholesale? && wholesaler.terms != 'Credit Card'
   end
 
 end

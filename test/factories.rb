@@ -72,4 +72,30 @@ FactoryGirl.define do
   #  wholesale true
   #end
 
+  factory :base_product, :class => Spree::Product do
+    sequence(:name) { |n| "Product ##{n} - #{Kernel.rand(9999)}" }
+    description { "Product description" }
+    price 19.99
+    cost_price 17.00
+    sku 'ABC'
+    available_on 1.year.ago
+    deleted_at nil
+  end
+
+  factory :base_variant, :class => Spree::Variant do
+    price 19.99
+    cost_price 17.00
+    sku    { SecureRandom.hex }
+    weight { BigDecimal.new("#{rand(200)}.#{rand(99)}") }
+    height { BigDecimal.new("#{rand(200)}.#{rand(99)}") }
+    width  { BigDecimal.new("#{rand(200)}.#{rand(99)}") }
+    depth  { BigDecimal.new("#{rand(200)}.#{rand(99)}") }
+
+    # associations:
+    product { |p| p.association(:base_product) }
+  end
+
+  factory :wholesale_variant, parent: :base_variant do
+    wholesale_price 9.50
+  end
 end

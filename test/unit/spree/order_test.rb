@@ -2,11 +2,6 @@ require 'test_helper'
 
 class Spree::OrderTest < ActiveSupport::TestCase
 
-  PRICE = BigDecimal.new("19.99")
-  WHOLESALE = BigDecimal.new("18.00")
-
-  fixtures :orders, :products
-
   def setup
     @wholesaler = Factory.create(:wholesaler)
   end
@@ -34,17 +29,21 @@ class Spree::OrderTest < ActiveSupport::TestCase
   should "get regular price" do
     order = Factory.create(:order)
     assert_equal 0, order.item_total
-    order.add_variant(products(:wholesale).master)
+    order.add_variant(Factory.build(:wholesale_variant))
     order.update!
-    assert_equal PRICE, order.item_total
+    assert_equal 19.99, order.item_total
   end
 
   should "get wholesale price" do
     order = Factory.create(:order, :user => @wholesaler.user, :wholesale => true)
     assert_equal 0, order.item_total
-    order.add_variant(products(:wholesale).master)
+    order.add_variant(Factory.build(:wholesale_variant))
     order.update!
-    assert_equal WHOLESALE, order.item_total
+    assert_equal 9.5, order.item_total
   end
 
+  should "not require payment if wholesale with net terms" do
+    order = Factory.build(:order, :user => @wholesaler.user, :wholesale => true)
+    assert(!order.payment_required?)
+  end
 end
