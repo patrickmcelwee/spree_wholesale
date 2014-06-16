@@ -2,6 +2,7 @@
 
 Spree wholesale is a simple wholesale solution for Spree Commerce. Spree wholesale adds a wholesaler login and signup page as well as an admin to approve and deny applicants. This is a fork from citrus's fantastic original.
 
+This requires Ruby > 2.0, in order to use module prepend.
 
 ------------------------------------------------------------------------------
 Installation

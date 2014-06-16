@@ -43,7 +43,24 @@ class Spree::OrderTest < ActiveSupport::TestCase
   end
 
   should "not require payment if wholesale with net terms" do
-    order = Factory.build(:order, :user => @wholesaler.user, :wholesale => true)
+    @wholesaler.terms = "Net30"
+    @wholesaler.save!
+    order = Factory.create(:order, :user => @wholesaler.user, :wholesale => true)
+    order.add_variant(Factory.build(:wholesale_variant))
     assert(!order.payment_required?)
+  end
+
+  should "require payment if not wholesale with net terms" do
+    order = Factory.create(:order, :user => @wholesaler.user, :wholesale => true)
+    order.add_variant(Factory.build(:wholesale_variant))
+    assert(order.payment_required?)
+
+    order1 = Factory.create(:order, user: @wholesaler.user, wholesale: false)
+    order1.add_variant(Factory.build(:wholesale_variant))
+    assert(order1.payment_required?)
+
+    order2 = Factory.create(:order)
+    order2.add_variant(Factory.build(:wholesale_variant))
+    assert(order2.payment_required?)
   end
 end
