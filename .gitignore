@@ -11,3 +11,4 @@ tmp/**/*
 *.swp
 .rvmrc
 test/dummy
+.sass-cache

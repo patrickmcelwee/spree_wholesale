@@ -18,12 +18,11 @@ class Spree::Admin::WholesalersTest < ActiveSupport::IntegrationCase
     visit spree.admin_wholesalers_path
     btn = find(".actions a.button").native
     assert_match(/#{spree.new_admin_wholesaler_path}$/, btn.attribute('href'))
-    assert_equal "New Wholesaler", btn.text
+    assert_equal "New Wholesaler".downcase, btn.text.downcase
   end
 
   should "get new wholesaler" do
     visit spree.new_admin_wholesaler_path
-    # assert has_content?("New Wholesaler")
     assert page.has_content?('New Wholesaler')
     within "#new_wholesaler" do
       @labels.each do |f|
@@ -49,7 +48,8 @@ class Spree::Admin::WholesalersTest < ActiveSupport::IntegrationCase
     assert page.has_content?(I18n.t('spree.admin.wholesaler.failed'))
   end
 
-  should "create wholesaler and parts" do
+  should "create wholesaler and parts", js: true do
+    Capybara.current_driver = Capybara.javascript_driver
     visit spree.new_admin_wholesaler_path
 
     within ".wholesaler-details" do
@@ -100,7 +100,7 @@ class Spree::Admin::WholesalersTest < ActiveSupport::IntegrationCase
         @address_labels.each_with_index do |label, index|
           fill_in label, :with => @address_values[index].reverse
         end
-        select 'California', :from => 'State'
+        #select 'California', :from => 'State'
         select 'United States', :from => 'Country'
       end
       within "#shipping" do
@@ -108,7 +108,7 @@ class Spree::Admin::WholesalersTest < ActiveSupport::IntegrationCase
         @address_labels.each_with_index do |label, index|
           fill_in label.sub('Billing', 'Shipping'), :with => @address_values[index]
         end
-        select 'California', :from => 'State'
+        #select 'California', :from => 'State'
         select 'United States', :from => 'Country'
       end
       click_button "Update"
