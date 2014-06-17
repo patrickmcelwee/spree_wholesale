@@ -24,30 +24,8 @@ ActionMailer::Base.default_url_options[:host] = "example.com"
 
 Rails.backtrace_cleaner.remove_silencers!
 
-module FixturesHelper
-
-  extend ActiveSupport::Concern
-
-  included do
-    self.fixture_path = File.expand_path('../fixtures/spree', __FILE__)
-    set_fixture_class :addresses   => Spree::Address
-    set_fixture_class :countries   => Spree::Country
-    set_fixture_class :products    => Spree::Product
-    set_fixture_class :spree_roles       => Spree::Role
-    set_fixture_class :states      => Spree::State
-    set_fixture_class :wholesalers => Spree::Wholesaler
-    fixtures :all
-  end
-
-end
-
 class ActionController::TestCase
   include Devise::TestHelpers
-  include FixturesHelper
-end
-
-class ActiveSupport::TestCase
-  include FixturesHelper
 end
 
 # Default to US

@@ -37,7 +37,7 @@ FactoryGirl.define do
     web_address "testcompany.com"
     terms "Credit Card"
     notes "What a guy!"
-    user { Spree::User.wholesale.last || Factory.create(:wholesale_user) }
+    user { Factory.create(:wholesale_user) }
     bill_address { Factory.create(:address) }
     ship_address { Factory.create(:address) }
   end

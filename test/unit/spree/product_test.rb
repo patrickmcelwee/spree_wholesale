@@ -2,17 +2,17 @@ require 'test_helper'
 
 class Spree::ProductTest < ActiveSupport::TestCase
 
-  fixtures :products
-
-  should "respond to wolesale price" do
-    product = products(:wholesale)
-    assert product.master.respond_to?(:wholesale_price), "Product is not wholesale ready. Try running `rake db:migrate` first."
+  should "respond to wholesale price" do
+    variant = Factory.build(:wholesale_variant)
+    product = variant.product
+    assert product.master.respond_to?(:wholesale_price), "Product is not wholesale ready."
   end
 
   should "be wholesaleble" do
-    product = products(:wholesale)
+    variant = Factory.create(:wholesale_variant)
+    product = variant.product
+    product.master = variant
     assert product.is_wholesaleable?
   end
-
 
 end
