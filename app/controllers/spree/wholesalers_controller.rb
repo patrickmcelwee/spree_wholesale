@@ -1,4 +1,4 @@
-class Spree::WholesalersController < Spree::BaseController
+class Spree::WholesalersController < Spree::StoreController
   respond_to :html, :xml
 
   ssl_required :new, :create
