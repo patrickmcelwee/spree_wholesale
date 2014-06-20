@@ -41,7 +41,6 @@ class Spree::Wholesaler < ActiveRecord::Base
   end
 
   def self.term_options
-    return ["Credit Card"] if Spree::Config.auto_approve_wholesaler
     ["Credit Card", "Net 30"]
   end
 
