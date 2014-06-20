@@ -82,6 +82,10 @@ FactoryGirl.define do
     deleted_at nil
   end
 
+  factory :product, parent: :base_product do
+    name 'RoR Mug'
+  end
+
   factory :base_variant, :class => Spree::Variant do
     price 19.99
     cost_price 17.00

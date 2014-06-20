@@ -49,7 +49,7 @@ module Spree
         current_item.variant = variant
         if currency
           current_item.currency = currency unless currency.nil?
-          current_item.price   = is_wholesale? ? variant.wholesale_price : variant.price_in(currency)
+          current_item.price   = is_wholesale? ? variant.wholesale_price : variant.price_in(currency).amount
         else
           current_item.price   = is_wholesale? ? variant.wholesale_price : variant.price
         end
