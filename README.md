@@ -10,11 +10,14 @@ Installation
 
 
 ```ruby
-# spree 1.2.x
+# spree 2.0
 gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => 'master'
 
-# spree 1.1.x
-gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => '1.1.x'
+# spree 1.3
+gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => '1-3-stable'
+
+# spree 1.2
+gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => '1-2-stable'
 
 Then install the necessary migrations, db:migrate, and create the wholesale role:
 
@@ -41,7 +44,7 @@ If you'd like to run tests:
 git clone git://github.com/patrickmcelwee/spree_wholesale.git
 cd spree_wholesale
 bundle install
-bundle exec dummier
+bundle exec test_app
 bundle exec rake
 ```
 

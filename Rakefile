@@ -9,7 +9,7 @@ end
 require 'rake'
 require 'rake/testtask'
 #require 'rake/rdoctask'
-require 'spree/core/testing_support/common_rake'
+require 'spree/testing_support/common_rake'
 
 Bundler::GemHelper.install_tasks
 
