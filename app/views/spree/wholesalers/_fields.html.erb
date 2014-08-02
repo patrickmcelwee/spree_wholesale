@@ -1,8 +1,3 @@
-<% content_for :head do %>
-  <script src='/states.js'></script>
-<% end %>
-
-
 <fieldset class="leftie">
 
   <fieldset class="user-details">
@@ -61,7 +56,3 @@
 <fieldset class="rightie">
   <%= render "spree/shared/address_form", :form => form %>
 </fieldset>
-
-<% content_for :head do %>
-  <%= javascript_include_tag '/states' %>
-<% end %>

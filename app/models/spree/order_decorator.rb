@@ -31,7 +31,7 @@ module Spree
     end
 
     def to_wholesale!
-      return false unless user.wholesaler.present?
+      return false unless user && user.wholesaler.present?
       self.wholesale = true
       set_line_item_prices(:wholesale_price)
       update!
