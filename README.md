@@ -10,8 +10,14 @@ Installation
 
 
 ```ruby
-# spree 2.0
+# spree 2.2
 gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => 'master'
+
+# spree 2.1
+gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => '2-1-stable'
+
+# spree 2.0
+gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => '2-0-stable'
 
 # spree 1.3
 gem 'spree_wholesale', :git => 'git://github.com/patrickmcelwee/spree_wholesale', :branch => '1-3-stable'
