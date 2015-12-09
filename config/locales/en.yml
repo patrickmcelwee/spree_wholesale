@@ -49,7 +49,7 @@ en:
         product_form_right:
           master_wholesale_price: "Master Wholesale Price"
         admin_orders_index_search:
-          show_wholesale_orders: "Show only wholesale orders"
+          show_only_wholesale_orders: "Show only wholesale orders"
 
       variants:
         form:

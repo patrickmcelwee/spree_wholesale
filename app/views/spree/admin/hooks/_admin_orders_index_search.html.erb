@@ -1,6 +1,6 @@
-<p>
-  <%= f.check_box :wholesale_eq, { :style => "vertical-align:middle;" } %>
+<div class='field checkbox' id='show-wholesale-option'>
   <label>
-    <%= t(".show_wholesale_orders") %>
+    <%= f.check_box :wholesale_eq, { :style => "vertical-align:middle;" } %>
+    <%= Spree.t(:show_only_wholesale_orders) %>
   </label>
-</p>
+</div>
